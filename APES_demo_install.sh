@@ -29,4 +29,4 @@ else
 	git clone git@github.com:noaa-afsc-mace/AFSC-AASI-APES_GCP.git
 fi
 
-docker run -it --rm -v "$PWD":/home/jovyan/AFSC-AASI-APES_GCP -w /home/jovyan/AFSC-AASI-APES_GCP -p 80:8888 quay.io/jupyter/julia-notebook-1.9.3 start-notebook.py --ServerApp.allow_origin='*'
+docker run -it --rm -v "$PWD":/home/jovyan/AFSC-AASI-APES_GCP -w /home/jovyan/AFSC-AASI-APES_GCP -p 80:8888 quay.io/jupyter/julia-notebook:julia-1.9.3 start-notebook.py --ServerApp.allow_origin='*'
