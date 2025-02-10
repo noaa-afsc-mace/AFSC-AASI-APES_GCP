@@ -16,17 +16,17 @@ else
  	source ./install.sh	
 fi
 
-docker pull quay.io/jupyter/julia-notebook
+docker pull quay.io/jupyter/julia-notebook:julia-1.9.3
 
 home_dir="$HOME"
-repo_dir="APESExamples"
+repo_dir="AFSC-AASI-APES_GCP"
 
 if [ -d "$home_dir/$repo_dir" ]; then
-	echo "APESExamples already cloned"	
+	echo "AFSC-AASI-APES_GCP already cloned"	
 #	return
 else
 	cd $home_dir
-	git clone https://github.com/ElOceanografo/APESExamples.git
+	git clone git@github.com:noaa-afsc-mace/AFSC-AASI-APES_GCP.git
 fi
 
-docker run -it --rm -v "$PWD":/home/jovyan/APESExample -w /home/jovyan/APESExample -p 80:8888 quay.io/jupyter/julia-notebook
+docker run -it --rm -v "$PWD":/home/jovyan/AFSC-AASI-APES_GCP -w /home/jovyan/AFSC-AASI-APES_GCP -p 80:8888 quay.io/jupyter/julia-notebook-1.9.3 start-notebook.py --ServerApp.allow_origin='*'
