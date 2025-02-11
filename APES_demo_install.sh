@@ -13,7 +13,8 @@ if command_exists docker; then
 else
 	wget https://github.com/docker/docker-install/blob/master/install.sh
 	chmod +x install.sh
- 	source ./install.sh	
+ 	source ./install.sh
+	rm install.sh	
 fi
 
 docker pull quay.io/jupyter/julia-notebook:julia-1.9.3
@@ -29,4 +30,4 @@ else
 	git clone git@github.com:noaa-afsc-mace/AFSC-AASI-APES_GCP.git
 fi
 
-docker run -it --rm -v "$PWD":/home/jovyan/AFSC-AASI-APES_GCP -w /home/jovyan/AFSC-AASI-APES_GCP -p 80:8888 quay.io/jupyter/julia-notebook:julia-1.9.3 start-notebook.py --ServerApp.allow_origin='*'
+docker run -it --rm -v "$PWD":/home/jovyan/AFSC-AASI-APES_GCP -w /home/jovyan/AFSC-AASI-APES_GCP -p 80:8888 quay.io/jupyter/julia-notebook:julia-1.9.3  start-notebook.py --ServerApp.allow_origin='*'  --IdentityProvider.token='' --PasswordIdentityProvider.hashed_password=''
