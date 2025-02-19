@@ -1,0 +1,3 @@
+[submodule "pyEcholab"]
+	path = pyEcholab
+	url = https://github.com/CI-CMG/pyEcholab.git

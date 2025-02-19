@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Script for launching  Docker jupyter notebook with APES examples
+# Script for launching custom Docker jupyter notebook with APES examples
 #
 
 command_exists() {
@@ -17,8 +17,6 @@ else
 	rm install.sh	
 fi
 
-docker pull quay.io/jupyter/julia-notebook:julia-1.9.3
-
 home_dir="$HOME"
 repo_dir="AFSC-AASI-APES_GCP"
 
@@ -30,4 +28,9 @@ else
 	git clone git@github.com:noaa-afsc-mace/AFSC-AASI-APES_GCP.git
 fi
 
-docker run -it --rm -v "$PWD":/home/jovyan/AFSC-AASI-APES_GCP -w /home/jovyan/AFSC-AASI-APES_GCP -p 80:8888 quay.io/jupyter/julia-notebook:julia-1.9.3  start-notebook.py --ServerApp.allow_origin='*'  --IdentityProvider.token='APES_demo'
+cd AFSC-AASI-APES_GCP
+docker build -t jupyter-apes .
+
+cd $home_dir
+
+docker run -it --rm -v "$PWD":/home/jovyan/AFSC-AASI-APES_GCP -w /home/jovyan/AFSC-AASI-APES_GCP -p 80:8888 jupyter-apes start-notebook.py --ServerApp.allow_origin='*'  --IdentityProvider.token='APES'
