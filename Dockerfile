@@ -19,4 +19,5 @@ ENV PATH=$PATH:/home/$NB_UID/julia-1.11.3/bin
 
 RUN julia -e 'using Pkg; pkg"add IJulia"; pkg"precompile"'
 
-RUN julia -e 'using Pkg; Pkg.add.(["CSV", "DataFrames", "DataFramesMeta", "Plots","Glob","DimensionalData","ProbabilisticEchoInversion","Distributed","SDWBA","UnderwaterAcoustics","PythonCall"])'
+# Alt version:
+#RUN julia -e 'using Pkg; Pkg.add.(["CSV", "DataFrames", "DataFramesMeta", "Plots","Glob","DimensionalData","ProbabilisticEchoInversion","Distributed","SDWBA","UnderwaterAcoustics","PythonCall","IJulia"]); pkg"precompile"'
