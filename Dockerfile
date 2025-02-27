@@ -3,7 +3,6 @@ FROM jupyter/datascience-notebook
 USER root
 RUN apt-get update && apt-get install -y unzip
 RUN wget https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -O awscliv2.zip && unzip awscliv2.zip && ./aws/install
-RUN julia -e 'using Pkg; pkg"add IJulia"; pkg"precompile"'
 
 ARG JULIA_VERSION=1.11.3
 RUN wget https://julialang-s3.julialang.org/bin/linux/x64/${JULIA_VERSION%.*}/julia-${JULIA_VERSION}-linux-x86_64.tar.gz && tar zxvf julia-${JULIA_VERSION}-linux-x86_64.tar.gz -C /opt && rm -r julia-${JULIA_VERSION}-linux-x86_64.tar.gz && ln -sf /opt/julia-${JULIA_VERSION}/bin/julia /usr/local/bin/julia
@@ -22,7 +21,4 @@ RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud
 
 ENV PATH=$PATH:/home/$NB_UID/google-cloud-sdk/bin
 
-#RUN julia -e 'using Pkg; pkg"add IJulia"; pkg"precompile"'
-
 RUN julia -e 'using Pkg; Pkg.add.(["IJulia","CSV","CategoricalArrays","ColorSchemes","DataFrames","DataFramesMeta","Dierckx","DimensionalData","Distributed","Distributions","ForwardDiff","Glob","ImageFiltering","KernelAbstractions","MAT","Optim","Plots","ProbabilisticEchoInversion","PythonCall","Random","SDWBA","StatsBase","StatsPlots","Turing","UnderwaterAcoustics"]); pkg"precompile"'
-
