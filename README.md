@@ -6,7 +6,7 @@ The following instructions are to set-up a Google Cloud Workstation to run APES.
 ## Computer setup
 1. Install the [Google cloud CLI tools](https://cloud.google.com/sdk/docs/install) on your work computer.
 
-## Google Cloud worstation setup
+## Google Cloud workstation setup
 1. Create Linux workstation.
 2. Use a terminal program and the Google cloud CLI to connect to your workstation via SSH tunnel. The command can be copied from the workstation page. The general form is:
    ```bash
