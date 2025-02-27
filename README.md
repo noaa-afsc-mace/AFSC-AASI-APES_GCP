@@ -22,7 +22,7 @@ The following instructions are to set-up a Google Cloud Workstation to run APES.
    This script will install Docker, build the custom Docker datascience notebook container for running APES, and lauch the container.
 5. Use the LAUNCH button on the workstation page and password 'APES' to connect to Jupyter Lab.
 
-## APES Exampmles
+## APES Examples
 We have included different notebooks for exploring and demonstrating how APES can be used. 
 - APESExamples.ipynb: modified steps for following the [APESExamples](https://github.com/ElOceanografo/APESExamples) instructions and running each example provided there.
 - APESExamples/raw_file/raw_file_example.ipynb: steps for processing raw echogram data using the [APES package](https://github.com/ElOceanografo/ProbabilisticEchoInversion.jl)
