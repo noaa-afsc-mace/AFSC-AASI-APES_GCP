@@ -33,4 +33,4 @@ docker build -t jupyter-apes .
 
 cd $home_dir
 
-docker run -it --rm -v "$PWD":/home/jovyan/AFSC-AASI-APES_GCP -w /home/jovyan/AFSC-AASI-APES_GCP -p 80:8888 jupyter-apes start-notebook.py --ServerApp.allow_origin='*'  --IdentityProvider.token='APES'
+docker run -it --rm -v "$PWD":/home/jovyan/AFSC-AASI-APES_GCP -w /home/jovyan/AFSC-AASI-APES_GCP -p 80:8888 -e NB_UID="$UID" jupyter-apes start-notebook.py --ServerApp.allow_origin='*'  --IdentityProvider.token='APES'

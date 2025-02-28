@@ -65,7 +65,7 @@ scatter!(svplot, freqs_nb, Svs_nb, color=pal, markershape=[:circle :square :utri
     markersize=5, markerstrokewidth=2, labels=["Krill-dominated" "Mix" "Fish-dominated"])
 d1 = plot(tsplot, svplot, size=(800, 325), dpi=600, margin=20px)
 savefig(joinpath(@__DIR__, "plots/Fig_1_fish_krill_Sv.png"))
-dispaly(d1)
+display(d1)
 
 data_bb = [(backscatter=Sv, freqs=freqs_bb, coords=(depth,))
     for Sv in Svs]
