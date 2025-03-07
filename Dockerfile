@@ -14,6 +14,7 @@ RUN pip install git+https://github.com/leviner/pyEcholab.git && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_UID}"
 
+RUN pip install boto3
 RUN pip install lxml
 RUN pip install future
 
