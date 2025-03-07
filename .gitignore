@@ -27,3 +27,6 @@ Manifest.toml
 # Jupyter checkpoints
 .ipynb_checkpoints/
 
+# Ignore large FM raw test files
+APESExamples/raw_file/data/raw/fm/
+APESExamples/raw_file/data/raw/remote/
