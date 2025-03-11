@@ -1,5 +1,5 @@
 # APES DEMO
-This repo includes code to setup a custom Docker Jupyter Lab notebook for running [APES](https://github.com/ElOceanografo/ProbabilisticEchoInversion.jl), [APES examples](https://github.com/ElOceanografo/APESExamples), and usign AWS and Google Cloud CLI's. 
+This repo includes code to setup a custom Docker Jupyter Lab notebook for running [APES](https://github.com/ElOceanografo/ProbabilisticEchoInversion.jl), [APES examples](https://github.com/ElOceanografo/APESExamples), and using AWS and Google Cloud CLI's. 
 Our Docker notebook is based on [Docker Jupypter datascience-notebook](https://quay.io/repository/jupyter/datascience-notebook).
 The following instructions are to set-up a Google Cloud Workstation to run APES.
 
