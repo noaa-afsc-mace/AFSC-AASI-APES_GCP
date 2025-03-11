@@ -23,7 +23,11 @@ The following instructions are to set-up a Google Cloud Workstation to run APES.
 5. Use the LAUNCH button on the workstation page and password 'APES' to connect to Jupyter Lab.
 
 ## APES Examples
-We have included different notebooks for exploring and demonstrating how APES can be used. 
-- APESExamples.ipynb: modified steps for following the [APESExamples](https://github.com/ElOceanografo/APESExamples) instructions and running each example provided there.
-- APESExamples/raw_file/raw_file_example.ipynb: steps for processing raw echogram data using the [APES package](https://github.com/ElOceanografo/ProbabilisticEchoInversion.jl)
-- APESExamples/mesopelagic_mix_simulation/mesopelagic_mixture.ipynb: annotated notebook of the julia mesopelagic_mixture code (mesopelagic_mixture.jl)
+This repository contains all of the examples provided in [APESExamples](https://github.com/ElOceanografo/APESExamples), with additional notebooks for exploring and demonstrating how APES can be used. Further details are provided in [Urmy et al., 2023](https://doi.org/10.1093/icesjms/fsad102).
+- *APESExamples.ipynb*: modified steps for following the APESExamples instructions and running each example provided there.
+- *APESExamples/mesopelagic_mix_simulation/mesopelagic_mixture_notebook.ipynb*: annotated notebook of the julia mesopelagic_mixture code (mesopelagic_mixture.jl). This example uses simulated scattering from a mesopelagic mixture to explore the impact of additional priors (video counts, eDNA presence/absence) on acoustic inversion.
+- *APESExamples/fish_krill_simulation/fish_krill_notebook.ipynb*: annotated notebook of the julia fish_krill_simulation code (fish_krill_simulation.jl). This example includes acoustic-only inversion of three scenarios representing fish-dominated, krill-dominated, and fish-krill mixture scattering.
+- *APESExamples/raw_file* contains three examples of running the [APES library](https://github.com/ElOceanografo/ProbabilisticEchoInversion.jl) directly from Simrad raw files. The example implementation uses the pyEcholab library to read, calibrate, and integrate the raw data into the expected input format, using three different sources of raw data:
+   - *raw_file_example_cw.ipynb*: narrowband data, with example .raw file provided
+   - *raw_file_example_fm.ipynb*: broadband data, with the user required to upload an example file directly to their workstation
+   - *raw_file_example_NCEI.ipynb*: direct download of raw file(s) from the [NCEI AWS S3](https://noaa-wcsd-pds.s3.amazonaws.com/index.html) archival storage
